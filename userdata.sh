@@ -12,3 +12,15 @@ sudo systemctl enable jenkins
 sudo systemctl start jenkins
 sudo systemctl status jenkins
 sudo apt install maven -y
+
+
+sudo apt update       #Run the below command to Install Docker
+sudo apt install docker.io
+
+sudo su -             #Grant Jenkins user and Ubuntu user permission to docker deamon
+usermod -aG docker jenkins
+usermod -aG docker ubuntu
+systemctl restart docker
+
+
+sudo systemctl start jenkins
