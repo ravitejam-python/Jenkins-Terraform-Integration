@@ -23,8 +23,8 @@ resource "aws_security_group" "mysg" {
     ipv6_cidr_blocks = ["::/0"]
   }
 
-   ingress {                     #Port 8080 for Jenkins
-    description      = "Jenkins"
+   ingress {                     
+    description      = "Jenkins Port 8080 for Jenkins"
     from_port        = 8080
     to_port          = 8080
     protocol         = "tcp"
@@ -39,8 +39,8 @@ resource "aws_security_group" "mysg" {
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
   }
-
 }
+
 resource "aws_instance" "Jenkins-Server" {
     ami = "ami-0c7217cdde317cfec"    # AWS Ubuntu instance AMI ID
     instance_type = "t2.micro"
